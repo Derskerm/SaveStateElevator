@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 
-public class ElevatorTester extends JPanel implements ActionListener {
+public class ElevatorTester extends JPanel implements ActionListener  {
 
   private JButton[] buttons;
   private JButton act;
@@ -56,7 +56,6 @@ public class ElevatorTester extends JPanel implements ActionListener {
   	if (e.getSource() == act) {
   		theElevator.act();
   	}
-  		
   }
   
 	

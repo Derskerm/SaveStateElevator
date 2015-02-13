@@ -23,6 +23,8 @@ public class SevenSegmentTester {
     	panel.initializeGUI();
     }
     
+    final SevenSegment 
+    
     w.addWindowListener(panel);
     
     w.add(panel);

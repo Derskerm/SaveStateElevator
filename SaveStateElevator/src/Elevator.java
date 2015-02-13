@@ -13,9 +13,9 @@ public class Elevator extends JPanel implements ActionListener
 {
   private static final int ACT_LAG_TIME = 2000;
 
-  private JButton swingAct;
-  private JButton[] swingButtons;
-  private Timer clock;
+  private transient JButton swingAct;
+  private transient JButton[] swingButtons;
+  private transient Timer clock;
   private int floor;
 
   // OUTPUTS
@@ -28,14 +28,18 @@ public class Elevator extends JPanel implements ActionListener
 
   public Elevator (JButton swingAct, JButton[] swingButtons) {
 	  super();
-	  this.swingButtons = swingButtons;
-	  this.swingAct = swingAct;
+	  
 	  floor = 1;
 	  doorOpen = true;
 	  direction = new boolean[2];
 	  buttons = new boolean[3];
 	  setBackground(Color.WHITE);
   	  clock = new Timer(ACT_LAG_TIME,this);
+  }
+  
+  public void initializeGUI(JButton swingAct, JButton[] swingButtons) {
+	  this.swingButtons = swingButtons;
+	  this.swingAct = swingAct;
   }
 
   public void act() {
